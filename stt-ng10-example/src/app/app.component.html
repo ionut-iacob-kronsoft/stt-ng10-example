@@ -1,0 +1,27 @@
+<main>
+  <h1>Test the Speech-to-text functionality</h1>
+  <p>Press the icon to toggle the Speech-to-text. Speak while the icon is red and press again the icon when you want to stop. The recognized text will be appended to the current value.</p>
+  <form [formGroup]="form">
+    <fieldset>
+      <legend>Product Details</legend>
+      <p>
+        <select placeholder="Select Product">
+          <option>Product 1</option>
+        </select>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Message</legend>
+      <p>
+        <label for="title" (speechToText)="form.get('title').setValue($event)">Title</label>
+        <input type="text" formControlName="title" name="title" autocomplete="off" value="">
+      </p>
+      <p>
+        <label for="content" (speechToText)="form.get('content').setValue($event)">Content</label>
+        <textarea name="test" autocomplete="off" formControlName="content"></textarea>
+      </p>
+    </fieldset>
+    <button>Submit</button>
+  </form>
+</main>
+<a href="https://www.kronsoft.ro/" target="_blank">Kronsoft</a>
