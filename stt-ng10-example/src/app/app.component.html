@@ -13,10 +13,13 @@
     <fieldset>
       <legend>Message</legend>
       <p>
+        <!-- The speechToText functionality can be attached very easily to any DOM element -->
+        <!-- The directive can be used as an Output directly because it returns the transcribed text everytime a session ends -->
         <label for="title" (speechToText)="form.get('title').setValue($event)">Title</label>
         <input type="text" formControlName="title" name="title" autocomplete="off" value="">
       </p>
       <p>
+        <!-- Another sample usage -->
         <label for="content" (speechToText)="form.get('content').setValue($event)">Content</label>
         <textarea name="test" autocomplete="off" formControlName="content"></textarea>
       </p>
